@@ -1,0 +1,17 @@
+runtime: nodejs10
+env: standard
+
+# This sample incurs costs to run on the App Engine flexible environment.
+# The settings below are to reduce costs during testing and are not appropriate
+# for production use. For more information, see:
+# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
+
+instance_class: F1
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico

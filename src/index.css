@@ -1,0 +1,168 @@
+@font-face{
+    font-family: RobotoCondensed;
+    src: url(assets/roboto-condensed.light.ttf);
+    font-weight: 800;
+}
+
+@font-face{
+    font-family: EconomicaBold;
+    src: url(assets/economica-bold.ttf);
+
+}
+
+h1, h2, h3, h4, h5{
+    font-family: EconomicaBold;
+    /* color: #66FCF1; */
+}
+
+body{
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 20px;
+    background-color: #e4e7ee;
+    /* padding: 2.5%; */
+    font-family: 'RobotoCondensed';
+    z-index: -999;
+    /* background-image: url('assets/background.jpg');
+    background-size: ; */
+}
+.duckHolder {
+    position: absolute;
+    z-index: -70;
+    height: 100%;
+    width: 100%;
+}
+
+.ducks {
+    position: absolute;
+    background-color: orange;
+    z-index: -70;
+    width: 20px;
+    height: 20px;
+}
+
+.header {
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(44, 5, 136, 0.1);
+    top: -2.5%;
+    border-top: 5px #0096fa;
+    width: 100%;
+    background-color: white;
+    position: static;
+}
+
+.footer {
+    margin: 40px 0 0;
+    clear:both;
+}
+
+.titleWrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.titleMenu {
+    /* padding-left: min(150px, 10%); */
+    width: 25em;
+    position: relative;
+    text-align: left;
+}
+
+.ui_section_title {
+    background-color: #e4e7ee;
+    border-radius: 2px;
+}
+
+.ui_section_title h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ui_section {
+    position: relative;
+    background-color: white;
+    border: 0.5px lightgray solid;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.page_middle { 
+    position: relative;
+    background-color: white;
+    border: 0.5px lightgray solid;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.ui_left {
+    float: left;
+    margin: 10px;
+    width: 180px;
+}
+
+.ui_middle {
+    float: left;
+    width: 800px;
+}
+
+.ui_middlepad{
+    float: left;
+    margin: 10px;
+    width: 580px;
+}
+
+.ui_right {
+    float: left;
+    margin: 10px;
+    width: 180px;
+}
+
+.page {
+    word-wrap: break-word;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover {
+   color: black
+}
+
+
+.otherlink:hover {
+    color: black
+}
+
+.profile {
+    width: 130px;
+    width: 130px;
+    border-radius: 100px;
+}
+
+.title-fade-out{
+    opacity: 0;
+    animation-name: fade-out;
+    animation-duration: 2s;
+}
+
+.title-fade-in{
+    opacity: 100;
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+@keyframes fade-out {
+    from { opacity: 100 }
+    to { opacity: 0 }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 100 }
+}
