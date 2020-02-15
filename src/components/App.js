@@ -75,14 +75,7 @@ class App extends Component {
                                 <Jokes /> 
                             </div>        
                         </div>   
-                        <div className="ui_right">        
-                            <div className="ui_section">
-                                <div className="ui_section_title">
-                                    <h5>League of Legends Data</h5>
-                                </div>
-                                <League />
-                            </div>
-                        </div>
+                        
                         {/* <div className="ui_right">        
                             <div className="ui_section">
                                 fsdafasdfsadfasdf
@@ -95,6 +88,14 @@ class App extends Component {
                         </div> */}
                     </div>
                 </div>
+                <div className="ui_right">        
+                            <div className="ui_section">
+                                <div className="ui_section_title">
+                                    <h5>League of Legends Data</h5>
+                                </div>
+                                <League />
+                            </div>
+                        </div>
             </div>
         )
     }

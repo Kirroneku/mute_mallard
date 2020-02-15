@@ -46,6 +46,11 @@ body{
     clear:both;
 }
 
+#websiteLogo {
+    width: 1.5em;
+    margin: 0px 10px;
+}
+
 .titleWrapper {
     margin: 0 auto;
 }
@@ -86,7 +91,7 @@ body{
     border-radius: 5px;
     padding: 5px;
     padding-top: 10px;
-    width: 900px;
+    width: 980px;
     margin: 0 auto;
 }
 
@@ -98,13 +103,13 @@ body{
 
 .ui_middle {
     float: left;
-    width: 800px;
+    width: 980px;
 }
 
 .ui_middlepad{
     float: left;
     margin: 10px;
-    width: 580px;
+    width: 740px;
 }
 
 .ui_right {
@@ -128,7 +133,7 @@ body{
 }
 
 .otherlink {
-    color: rgb(111, 150, 255);
+    color: rgb(253, 129, 68);
 }
 
 .otherlink:hover {

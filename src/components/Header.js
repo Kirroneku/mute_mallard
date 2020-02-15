@@ -15,9 +15,15 @@ class Header extends Component {
         }
 
         var linkToHome = (
-        <Link to='/' className={current=='home'? "link": "otherlink"}> 
-            Portfolio 
-        </Link>);
+            <div>
+                <Link to='/' className={current=='home'? "link": "otherlink"}> 
+                    <img src={websiteLogo} id="websiteLogo" />
+                </Link> 
+                <Link to='/' className={current=='home'? "link": "otherlink"}> 
+                    Portfolio 
+                </Link> 
+            </div>
+        );
 
         var linkToJokes = (
             <Link to='/jokes' 
@@ -45,7 +51,7 @@ class Header extends Component {
                 <div className="header">
                     <div className="titleWrapper">
                         <div className="titleMenu">
-                            <a href src="https://mutemallard.ca"><img src={websiteLogo} /></a>
+                            
                             <h3 style={style}>{linkToHome}</h3>
                             <h3 style={style}>{linkToJokes}</h3>
                             <h3 style={style}>{linkToProjects}</h3>

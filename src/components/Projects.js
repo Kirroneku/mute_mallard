@@ -6,12 +6,12 @@ const Project = (props) => {
     const { title, image, description, type, link} = props.project;
     var myLinking = null;
     if(type != 'inSite') {
-        myLinking = (<a href={link}>
+        myLinking = (<a href={link} className="otherlink">
             <h3><img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px' }} />{title}</h3>
         </a>)
     } else {
         
-        myLinking = (<Link to={link}>
+        myLinking = (<Link to={link} className="otherlink"> 
             <h3> <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} /> {title}</h3>
         </Link>)
     }
