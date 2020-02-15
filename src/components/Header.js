@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import home_icon from '../assets/home_icon.png';
+import mmLogo from '../assets/home_icon.png';
 import Socials from './Social';
 
 class Header extends Component {
@@ -45,6 +45,7 @@ class Header extends Component {
                 <div className="header">
                     <div className="titleWrapper">
                         <div className="titleMenu">
+                            <a href src="https://mutemallard.ca"><img src={} /></a>
                             <h3 style={style}>{linkToHome}</h3>
                             <h3 style={style}>{linkToJokes}</h3>
                             <h3 style={style}>{linkToProjects}</h3>
