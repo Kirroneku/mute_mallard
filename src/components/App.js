@@ -11,6 +11,7 @@ class App extends Component {
     state = {
         displayBio: false,
     };
+    
     // constructor(){
     //     super();
     //     this.state = {
@@ -26,11 +27,10 @@ class App extends Component {
     //     })
     //     // console.log('readMore this', this);
     // }
-
     render() {
         let bio = !this.state.displayBio? (<div>
-            <p>  I'm a software engineer currently looking for a job! </p>
-            <Title />
+            
+            {/* <Title /> */}
             </div>) : null;
             
         // let readLM =  this.state.displayBio?
@@ -42,7 +42,7 @@ class App extends Component {
             <div>
                 <SpawnDucks />
                 <div className="page" >
-                    <div className="ui_left">
+                    {/* <div className="ui_left">
                         <div className="ui_section" style={{"height":"500px", "paddingTop":"10px"}}>
                             <div className="ui_section_title">
                                 <h5>About Me</h5>
@@ -57,7 +57,7 @@ class App extends Component {
                                 {bio}
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="ui_middle" >
                         <div className="ui_middlepad"  > 
                             <div className="ui_section" style={{"paddingTop":"10px"}}>

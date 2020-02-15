@@ -35382,12 +35382,6 @@ var _ppap = _interopRequireDefault(require("../assets/ppap.png"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PROJECTS = [{
-  id: 1,
-  title: 'Pitch Perfect: Accurately Practice',
-  description: 'An Android app that helps users develop perfect pitch by allowing them to sing and practice in different modes.',
-  link: 'https://github.com/alexlai97/Pitch-Perfectly-Accurately-Practice',
-  image: _ppap.default
-}, {
   id: 2,
   type: 'inSite',
   title: 'Evens or Odds',
@@ -35401,6 +35395,12 @@ var PROJECTS = [{
   description: "Using the spotify api, searches for an artist's top 10 listened songs and lists\n        them to allow the user to listen to a 30 second preview.\n        ",
   link: '/music-master',
   image: _mmLogo.default
+}, {
+  id: 1,
+  title: 'Pitch Perfect: Accurately Practice',
+  description: 'An Android app that helps users develop perfect pitch by allowing them to sing and practice in different modes.',
+  link: 'https://github.com/alexlai97/Pitch-Perfectly-Accurately-Practice',
+  image: _ppap.default
 }];
 var _default = PROJECTS;
 exports.default = _default;
@@ -35799,13 +35799,15 @@ var Project = function Project(props) {
     }), " ", title));
   }
 
+  var newDescription = _react.default.createElement("p", null, description);
+
   return _react.default.createElement("div", {
     style: {
       display: 'inline-block',
       width: "80%",
       margin: 10
     }
-  }, myLinking, _react.default.createElement("p", null, description), _react.default.createElement("hr", null));
+  }, myLinking, newDescription, _react.default.createElement("hr", null));
 };
 
 var Projects = function Projects() {
@@ -35865,21 +35867,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Job = function Job(props) {
   var _props$project = props.project,
+      id = _props$project.id,
       title = _props$project.title,
       description = _props$project.description,
       time = _props$project.time;
+  var myId = id + "job";
+  var curId = '#' + id + "job";
   return _react.default.createElement("div", {
     style: {
       display: 'inline-block',
       width: "80%",
       margin: 10
     }
-  }, _react.default.createElement("h4", null, title), _react.default.createElement("h4", null, time), _react.default.createElement("p", {
+  }, _react.default.createElement("h4", null, title), _react.default.createElement("h4", null, time), _react.default.createElement("div", {
+    id: id
+  }, _react.default.createElement("p", {
     style: {
-      "white-space": "pre-line",
+      "whiteSpace": "pre-line",
       "textAlign": "left"
     }
-  }, description), _react.default.createElement("hr", null));
+  }, description)), _react.default.createElement("hr", null));
 };
 
 var Jobs = function Jobs() {
@@ -35979,7 +35986,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log('Title component has mounted');
+      // console.log('Title component has mounted');
       this.timeout = setTimeout(function () {
         return _this2.setState({
           fadeIn: false
@@ -35990,7 +35997,7 @@ function (_Component) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      console.log('Title component has unmounted');
+      // console.log('Title component has unmounted');
       clearInterval(this.titleInterval);
       clearTimeout(this.timeout);
     }
@@ -36804,7 +36811,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "getLeagueRank", function () {
-      console.log("finding league");
+      // console.log("finding league")
       fetch("".concat(API_URL, "/summoner-info?summoner=").concat(_this.state.currentSummoner)).then(function (res) {
         return res.json();
       }).then(function (json) {
@@ -36862,8 +36869,7 @@ function (_Component) {
         for (var i in mode_data) {
           // console.log(mode_data[i].queueId );
           if (mode_data[i].queueId === json.gameQueueConfigId) {
-            console.log("Matched" + json.gameQueueConfigId);
-
+            // console.log("Matched" + json.gameQueueConfigId)
             _this.setState({
               inGame: {
                 gameType: mode_data[i].description
@@ -36891,8 +36897,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "updateSummoner", function (event) {
-      console.log('event.target.value', event.target.value);
-
+      // console.log('event.target.value', event.target.value);
       _this.setState({
         currentSummoner: event.target.value
       });
@@ -36932,9 +36937,8 @@ function (_Component) {
           fontSize: '18px',
           width: '170px'
         }
-      }, "Not in game"));
+      }, "Not in game")); // console.log(this.state);
 
-      console.log(this.state);
 
       if (this.state.inGame != null) {
         if (this.state.inGame.gameType === -1) {
@@ -37108,7 +37112,7 @@ function (_Component) {
     //     // console.log('readMore this', this);
     // }
     value: function render() {
-      var bio = !this.state.displayBio ? _react.default.createElement("div", null, _react.default.createElement("p", null, "  I'm a software engineer currently looking for a job! "), _react.default.createElement(_title.default, null)) : null; // let readLM =  this.state.displayBio?
+      var bio = !this.state.displayBio ? _react.default.createElement("div", null) : null; // let readLM =  this.state.displayBio?
       //  <button onClick={this.readMore}> Read More </button>:
       //  <button onClick={this.readMore}> Show Less </button>
       // const myMargin = Math.max('0', document.getElementById(page).clientWidth - 1000)/2));
@@ -37117,22 +37121,6 @@ function (_Component) {
       return _react.default.createElement("div", null, _react.default.createElement(_SpawnDucks.default, null), _react.default.createElement("div", {
         className: "page"
       }, _react.default.createElement("div", {
-        className: "ui_left"
-      }, _react.default.createElement("div", {
-        className: "ui_section",
-        style: {
-          "height": "500px",
-          "paddingTop": "10px"
-        }
-      }, _react.default.createElement("div", {
-        className: "ui_section_title"
-      }, _react.default.createElement("h5", null, "About Me")), _react.default.createElement("img", {
-        src: _profile.default,
-        alt: "profile",
-        className: "profile"
-      }), _react.default.createElement("h3", null, "Jialin Shan"), _react.default.createElement("a", {
-        href: "mailto:j6shan@gmail.com"
-      }, "j6shan@gmail.com"), _react.default.createElement("hr", null), _react.default.createElement("div", null, bio))), _react.default.createElement("div", {
         className: "ui_middle"
       }, _react.default.createElement("div", {
         className: "ui_middlepad"
@@ -37319,14 +37307,7 @@ function (_Component) {
       var linkToHome = _react.default.createElement(_reactRouterDom.Link, {
         to: "/",
         className: current == 'home' ? "link" : "otherlink"
-      }, _react.default.createElement("img", {
-        alt: "home_icon",
-        src: _home_icon.default,
-        style: {
-          'height': '0.7em',
-          'marginRight': '0.2em'
-        }
-      }), "Home");
+      }, "Portfolio");
 
       var linkToJokes = _react.default.createElement(_reactRouterDom.Link, {
         to: "/jokes",
@@ -41319,7 +41300,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49683" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62820" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

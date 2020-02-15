@@ -15,9 +15,8 @@ class Header extends Component {
         }
 
         var linkToHome = (
-        <Link to='/' className={current=='home'? "link": "otherlink"}>
-            <img alt="home_icon" src={home_icon} style={{'height':'0.7em', 'marginRight':'0.2em'}}/> 
-            Home 
+        <Link to='/' className={current=='home'? "link": "otherlink"}> 
+            Portfolio 
         </Link>);
 
         var linkToJokes = (
