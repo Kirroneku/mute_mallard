@@ -58,7 +58,7 @@ body{
 
 .titleMenu {
     /* padding-left: min(150px, 10%); */
-    /* width: 25em; */
+    width: 70%;
     position: relative;
     text-align: left;
 }
