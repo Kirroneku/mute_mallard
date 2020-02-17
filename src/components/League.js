@@ -112,7 +112,7 @@ class League extends Component {
 
         var inGame = 
             (<div style={{textAlign: 'center'}}>
-                <p style={{fontSize: '18px', width: '170px'}}>Not in game</p>
+                <p style={{fontSize: '18px', width: '170px' , margin: "0 auto"}}>Not in game</p>
             </div>);
 
         // console.log(this.state);
@@ -126,7 +126,7 @@ class League extends Component {
             } else {
                 inGame = 
                     (<div style={{textAlign: 'center'}}>
-                        <p style={{fontSize: '18px', width: '170px'}}>Currently in a {this.state.inGame.gameType} game</p>
+                        <p style={{fontSize: '18px', width: '170px' , margin: "0 auto"}}>Currently in a {this.state.inGame.gameType} game</p>
                     </div>);
             }
         }
@@ -147,7 +147,9 @@ class League extends Component {
                     (<div>
                         <hr />
                         Solo Queue: 
+                        <br/>
                         <img src={soloRankImg} alt="rank image" style={{width: '100px'}} />
+                        <br/>
                         <p>
                             {this.state.soloRank.tier} {this.state.soloRank.rank} {this.state.soloRank.lp} LP
                         </p>
@@ -166,7 +168,9 @@ class League extends Component {
                     (<div>
                         <hr />
                         Flex Queue: 
+                        <br/>
                         <img src={flexRankImg} alt="rank image" style={{width: '100px'}} />
+                        <br/>
                         <p>
                             {this.state.flexRank.tier} {this.state.flexRank.rank} {this.state.flexRank.lp} LP
                         </p>
@@ -175,7 +179,10 @@ class League extends Component {
         }
 
         return (
-            <div>                
+            <div>
+                <div className="ui_section_title">
+                    <h5>League of Legends Data</h5>
+                </div>                
                 <h5>Search Summoner (NA)</h5>
                 <input 
                     onKeyPress={this.handleKeyPress}
@@ -187,7 +194,8 @@ class League extends Component {
                 {soloRank}
                 {flexRank}
                 <hr />
-                {inGame}
+                {inGame} 
+
             </div>
         )
     }

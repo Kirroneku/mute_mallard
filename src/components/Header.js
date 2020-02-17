@@ -2,11 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import websiteLogo from '../assets/websiteLogo.png';
 import Socials from './Social';
+import LINKS from '../data/links';
 
 class Header extends Component {
+    state = {
+        current: "home",
+    };
+
+    updateCurrent ( curLink ) {
+        this.setState({ "current": curLink });
+    }
+
+    makeLink (current, curLink, text) {
+        return (
+            <Link to={curLink} 
+            className={this.state.current==curLink? "link": "otherlink"}
+            onClick={() => this.updateCurrent(curLink)}>
+                {text}
+            </Link>
+        )
+    }
 
     render() {
-        const { current } = this.props;
+        let { current } = this.props;
         const style = {
             display: 'inline-block',
             // color: 'black',
@@ -16,27 +34,11 @@ class Header extends Component {
 
         var linkToHome = (
             <div>
-                <Link to='/'> 
+                <Link to='/'
+                onClick={() => this.updateCurrent(curLink)}> 
                     <img src={websiteLogo} id="websiteLogo" />
                 </Link> 
-                <Link to='/' className={current=='home'? "link": "otherlink"}> 
-                    Portfolio 
-                </Link> 
             </div>
-        );
-
-        var linkToJokes = (
-            <Link to='/jokes' 
-                className={current=='jokes'? "link": "otherlink"}> 
-                Jokes 
-            </Link>
-        );
-
-        var linkToProjects = (
-            <Link to='/projects' 
-                className={current=='projects'? "link": "otherlink"}>
-                Projects 
-            </Link>
         );
 
         const socialStyle = {
@@ -51,9 +53,17 @@ class Header extends Component {
                 <div className="header">
                     <div className="titleWrapper">
                         <div className="titleMenu">
-                            <h3 style={style}>{linkToHome}</h3>
-                            <h3 style={style}>{linkToJokes}</h3>
-                            <h3 style={style}>{linkToProjects}</h3>
+                            <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3>
+                            {
+                                LINKS.map(LINK => {
+                                    var curLink = this.makeLink(current, LINK.link, LINK.linkName);
+                                    return(
+                                        <h3 id={LINK.id} style={style}>
+                                            {curLink}
+                                        </h3>
+                                    )
+                                })
+                            }
                         </div>
                         <div style={socialStyle}>
                             <Socials />

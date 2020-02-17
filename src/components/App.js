@@ -5,7 +5,6 @@ import profile from '../assets/profile.jpg'
 import Title from './title';
 import { Jokes } from './Joke';
 import SpawnDucks from './SpawnDucks'
-import League from './League';
 
 class App extends Component {
     state = {
@@ -29,9 +28,9 @@ class App extends Component {
     // }
     render() {            
         return (
-            <div>
+            <div className="block">
                 <SpawnDucks />
-                <div className="page" >
+                <div className="page">
                     <div className="ui_middle" >
                         <div className="ui_middlepad"  > 
                             <div className="ui_section">
@@ -60,14 +59,6 @@ class App extends Component {
                                 <Jokes /> 
                             </div>        
                         </div>   
-                    </div>
-                </div>
-                <div className="ui_right">        
-                    <div className="ui_section">
-                        <div className="ui_section_title">
-                            <h5>League of Legends Data</h5>
-                        </div>
-                        <League />
                     </div>
                 </div>
             </div>

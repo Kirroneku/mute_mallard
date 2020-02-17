@@ -58,7 +58,7 @@ body{
 
 .titleMenu {
     /* padding-left: min(150px, 10%); */
-    width: 25em;
+    /* width: 25em; */
     position: relative;
     text-align: left;
 }
@@ -153,10 +153,11 @@ body{
 }
 
 .socialImage {
+    height: 20px;
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
-    height: 20px;
+    
 }
 
 .socialImage:hover {

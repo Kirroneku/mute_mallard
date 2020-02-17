@@ -8,6 +8,8 @@ import MusicMaster from './projects/music_master';
 import EvensOrOdds from './projects/evens-or-odds';
 import Footer from './components/Footer';
 import { Projects } from './components/Projects';
+import League from './components/League';
+
 import './index.css';
 
 const browser = require("history").createBrowserHistory();
@@ -54,6 +56,15 @@ ReactDOM.render(
                         </ div>
                     </div>
             <Footer/></Header>}/>
+            <Route path='/league-rank' render={() =>
+            <Header current="league-rank">
+                <div className="page">      
+                    <div className="page_middle">
+                        <League />
+                    </div>
+                </div>
+                <Footer/></Header>
+            } />
         </Switch>
     </Router>,
     document.getElementById('root')
