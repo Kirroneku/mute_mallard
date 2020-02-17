@@ -9,7 +9,7 @@ class League extends Component {
         soloRank: null,
         flexRank: null,
         inGame: null,
-        currentSummoner: "import"
+        currentSummoner: "Import"
     }
 
     componentDidMount() {
@@ -23,8 +23,16 @@ class League extends Component {
         .then(res => res.json())
         .then(json => {
             console.log(json);
-            var soloRank = null;
-            var flexRank = null;
+            var soloRank = {
+                rank: null,
+                tier: 'UNRANKED',
+                lp: null
+            };
+            var flexRank = {
+                rank: null,
+                tier: 'UNRANKED',
+                lp: null
+            };
 
             for (const i in json) {
                 switch(json[i].queueType){
@@ -32,14 +40,14 @@ class League extends Component {
                         soloRank = {
                             tier: json[0].tier, 
                             rank: json[0].rank,
-                            lp: json[0].leaguePoints
+                            lp: json[0].leaguePoints + 'LP'
                         };
                         break;
                     case 'RANKED_FLEX_SR':
                         flexRank = {
                             tier: json[1].tier, 
                             rank: json[1].rank,
-                            lp: json[1].leaguePoints
+                            lp: json[1].leaguePoints + 'LP'
                         };
                         break;
                     default:
@@ -131,52 +139,49 @@ class League extends Component {
             }
         }
 
-        if(this.state.inGame != null && this.state.inGame.gameType === -1) {
-            soloRank = null;
-            flexRank = null;
-        } else {
-            if(this.state.soloRank){        
-                for ( const rank in LEAGUE_RANKS ) {
-                    // console.log(rank)
-                    if( LEAGUE_RANKS[rank].title == this.state.soloRank.tier ) {
-                        soloRankImg = LEAGUE_RANKS[rank].image;
-                    }
+
+        if(this.state.soloRank){        
+            for ( const rank in LEAGUE_RANKS ) {
+                // console.log(rank)
+                if( LEAGUE_RANKS[rank].title == this.state.soloRank.tier ) {
+                    soloRankImg = LEAGUE_RANKS[rank].image;
                 }
-    
-                soloRank = 
-                    (<div>
-                        <hr />
-                        Solo Queue: 
-                        <br/>
-                        <img src={soloRankImg} alt="rank image" style={{width: '100px'}} />
-                        <br/>
-                        <p>
-                            {this.state.soloRank.tier} {this.state.soloRank.rank} {this.state.soloRank.lp} LP
-                        </p>
-                    </div>);
             }
-    
-            if(this.state.flexRank){        
-                for ( const rank in LEAGUE_RANKS ) {
-                    // console.log(rank)
-                    if( LEAGUE_RANKS[rank].title == this.state.flexRank.tier ) {
-                        flexRankImg = LEAGUE_RANKS[rank].image;
-                    }
-                }
-    
-                flexRank = 
-                    (<div>
-                        <hr />
-                        Flex Queue: 
-                        <br/>
-                        <img src={flexRankImg} alt="rank image" style={{width: '100px'}} />
-                        <br/>
-                        <p>
-                            {this.state.flexRank.tier} {this.state.flexRank.rank} {this.state.flexRank.lp} LP
-                        </p>
-                    </div>);
-            }
+
+            soloRank = 
+                (<div>
+                    <hr />
+                    Solo Queue: 
+                    <br/>
+                    <img src={soloRankImg} alt="rank image" style={{width: '100px'}} />
+                    <br/>
+                    <p>
+                        {this.state.soloRank.tier} {this.state.soloRank.rank} {this.state.soloRank.lp} 
+                    </p>
+                </div>);
         }
+
+        if(this.state.flexRank){        
+            for ( const rank in LEAGUE_RANKS ) {
+                // console.log(rank)
+                if( LEAGUE_RANKS[rank].title == this.state.flexRank.tier ) {
+                    flexRankImg = LEAGUE_RANKS[rank].image;
+                }
+            }
+
+            flexRank = 
+                (<div>
+                    <hr />
+                    Flex Queue: 
+                    <br/>
+                    <img src={flexRankImg} alt="rank image" style={{width: '100px'}} />
+                    <br/>
+                    <p>
+                        {this.state.flexRank.tier} {this.state.flexRank.rank} {this.state.flexRank.lp}
+                    </p>
+                </div>);
+        }
+        
 
         return (
             <div>
@@ -191,6 +196,7 @@ class League extends Component {
                     style={{"width":"170px", "marginBottom": "10px"}}
                 />
                 <button onClick={() => this.findSummoner()}>Check</button>
+                <h3>Summoner: {this.state.currentSummoner}</h3>
                 {soloRank}
                 {flexRank}
                 <hr />

@@ -1,12 +1,13 @@
-import bronze from '../assets/ranks/bronze.png'
-import diamond from '../assets/ranks/diamond.png'
-import grandmaster from '../assets/ranks/grandmaster.png'  
-import master from '../assets/ranks/master.png'    
-import silver from '../assets/ranks/silver.png'
-import challenger from '../assets/ranks/challenger.png'  
-import gold from '../assets/ranks/gold.png'     
-import iron from '../assets/ranks/iron.png'         
-import platinum from '../assets/ranks/platinum.png'
+import bronze from '../assets/ranks/bronze.png';
+import diamond from '../assets/ranks/diamond.png';
+import grandmaster from '../assets/ranks/grandmaster.png';
+import master from '../assets/ranks/master.png';
+import silver from '../assets/ranks/silver.png';
+import challenger from '../assets/ranks/challenger.png';  
+import gold from '../assets/ranks/gold.png';     
+import iron from '../assets/ranks/iron.png';         
+import platinum from '../assets/ranks/platinum.png';
+import unranked from '../assets/ranks/unranked.png';
 
 const LEAGUE_RANKS = [
     {
@@ -45,7 +46,11 @@ const LEAGUE_RANKS = [
         id: 9,
         title: 'IRON',
         image: iron
-    },
+    },{
+        id: 10,
+        title: 'UNRANKED',
+        image: unranked
+    }
 ]
 
 export default LEAGUE_RANKS;
