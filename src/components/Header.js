@@ -9,14 +9,14 @@ class Header extends Component {
         const { current } = this.props;
         const style = {
             display: 'inline-block',
-            color: 'black',
+            // color: 'black',
             margin: 10,
             marginBottom: 0,
         }
 
         var linkToHome = (
             <div>
-                <Link to='/' className={current=='home'? "link": "otherlink"}> 
+                <Link to='/'> 
                     <img src={websiteLogo} id="websiteLogo" />
                 </Link> 
                 <Link to='/' className={current=='home'? "link": "otherlink"}> 
@@ -41,7 +41,7 @@ class Header extends Component {
 
         const socialStyle = {
             "float": "right",
-            "marginTop": "-1.6em",
+            "marginTop": "-1.8em",
             // "marginRight": "min(200px, 10%)"
         }
 
@@ -51,7 +51,6 @@ class Header extends Component {
                 <div className="header">
                     <div className="titleWrapper">
                         <div className="titleMenu">
-                            
                             <h3 style={style}>{linkToHome}</h3>
                             <h3 style={style}>{linkToJokes}</h3>
                             <h3 style={style}>{linkToProjects}</h3>
@@ -60,9 +59,6 @@ class Header extends Component {
                             <Socials />
                         </div>
                     </div>
-                    
-
-                    <hr></hr>
                 </div>
                 {this.props.children}  
             </div> 

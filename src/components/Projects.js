@@ -12,7 +12,7 @@ const Project = (props) => {
     } else {
         
         myLinking = (<Link to={link} className="otherlink"> 
-            <h3> <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} /> {title}</h3>
+            <h3> <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} />{title}</h3>
         </Link>)
     }
     var newDescription = <p>{description}</p>;
@@ -43,6 +43,23 @@ const Projects = () => {
     )    
 }
     
+const HighlightedProjects = () => {
+    return(
+        <span>
+            <div>
+                {
+                    PROJECTS.map(PROJECT => {
+                        if(PROJECT.Highlighted) {
+                            return (
+                                <Project key={PROJECT.id} project={PROJECT}/>                          
+                            );
+                        } 
+                        return (<div></div>);
+                    })
+                }
+            </div>
+        </span>
+    )    
+}
 
-
-export default Projects;
+export {Projects, HighlightedProjects};
