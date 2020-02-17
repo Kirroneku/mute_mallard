@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Projects from './Projects';
+import {HighlightedProjects} from './Projects';
 import Jobs from './Jobs';
 import profile from '../assets/profile.jpg'
 import Title from './title';
 import { Jokes } from './Joke';
 import SpawnDucks from './SpawnDucks'
-import League from './League';
 
 class App extends Component {
     state = {
         displayBio: false,
     };
+    
     // constructor(){
     //     super();
     //     this.state = {
@@ -26,45 +26,29 @@ class App extends Component {
     //     })
     //     // console.log('readMore this', this);
     // }
-
-    render() {
-        let bio = !this.state.displayBio? (<div>
-            <p>  I'm a software engineer currently looking for a job! </p>
-            <Title />
-            </div>) : null;
-            
-        // let readLM =  this.state.displayBio?
-        //  <button onClick={this.readMore}> Read More </button>:
-        //  <button onClick={this.readMore}> Show Less </button>
-        // const myMargin = Math.max('0', document.getElementById(page).clientWidth - 1000)/2));
-        // style={{"marginLeft": myMargin}}
+    render() {            
         return (
-            <div>
+            <div className="block">
                 <SpawnDucks />
-                <div className="page" >
-                    <div className="ui_left">
-                        <div className="ui_section" style={{"height":"500px", "paddingTop":"10px"}}>
-                            <div className="ui_section_title">
-                                <h5>About Me</h5>
-                            </div>
-                            <img src={profile} alt='profile' className="profile"/>
-                            <h3> 
-                                Jialin Shan 
-                            </h3>
-                            <a href="mailto:j6shan@gmail.com">j6shan@gmail.com</a>
-                            <hr />
-                            <div>
-                                {bio}
-                            </div>
-                        </div>
-                    </div>
+                <div className="page">
                     <div className="ui_middle" >
                         <div className="ui_middlepad"  > 
-                            <div className="ui_section" style={{"paddingTop":"10px"}}>
+                            <div className="ui_section">
+                                <div className="ui_section_title">
+                                    <h5>About Me</h5>
+                                </div>
+                                <img src={profile} alt='profile' className="profile"/>
+                                <h3> 
+                                    Jialin Shan 
+                                </h3>
+                                <a href="mailto:j6shan@gmail.com">j6shan@gmail.com</a>
+                                <p>I am a software engineer that is motivated to learn new things all the time! </p>
+                            </div>
+                            <div className="ui_section">
                                 <div className="ui_section_title">
                                     <h5>Highlighted Projects</h5>
                                 </div>
-                                <Projects />
+                                <HighlightedProjects />
                                 <div className="ui_section_title">
                                     <h5>Previous Work Experience</h5>
                                 </div>
@@ -75,24 +59,6 @@ class App extends Component {
                                 <Jokes /> 
                             </div>        
                         </div>   
-                        <div className="ui_right">        
-                            <div className="ui_section">
-                                <div className="ui_section_title">
-                                    <h5>League of Legends Data</h5>
-                                </div>
-                                <League />
-                            </div>
-                        </div>
-                        {/* <div className="ui_right">        
-                            <div className="ui_section">
-                                fsdafasdfsadfasdf
-                            </div>
-                        </div>
-                        <div className="ui_right">        
-                            <div className="ui_section">
-                                fsdafasdfsadfasdf
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>
