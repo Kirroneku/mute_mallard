@@ -5,11 +5,6 @@ const LINKS = [
         linkName: 'Portfolio'
     },
     {
-        id: 1,
-        link: '/jokes',
-        linkName: 'Jokes'
-    },
-    {
         id: 2,
         link: '/projects',
         linkName: 'Projects'
