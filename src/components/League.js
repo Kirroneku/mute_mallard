@@ -26,12 +26,14 @@ class League extends Component {
             var soloRank = {
                 rank: null,
                 tier: 'UNRANKED',
-                lp: null
+                lp: null,
+                wr: null
             };
             var flexRank = {
                 rank: null,
                 tier: 'UNRANKED',
-                lp: null
+                lp: null,
+                wr: null
             };
 
             for (const i in json) {

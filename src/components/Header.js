@@ -6,7 +6,7 @@ import LINKS from '../data/links';
 
 class Header extends Component {
     state = {
-        current: "home",
+        current: "/",
     };
 
     updateCurrent ( curLink ) {
@@ -35,7 +35,7 @@ class Header extends Component {
         var linkToHome = (
             <div>
                 <Link to='/'
-                onClick={() => this.updateCurrent(curLink)}> 
+                onClick={() => this.updateCurrent('/')}> 
                     <img src={websiteLogo} id="websiteLogo" />
                 </Link> 
             </div>
