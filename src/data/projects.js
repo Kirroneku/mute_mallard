@@ -5,7 +5,7 @@ import mallardLogo from '../assets/websiteLogo.png';
 
 const PROJECTS = [
     {
-        id: 2,
+        id: 1,
         type: 'inSite',
         title: 'Evens or Odds',
         description:    `A guessing game to guess if the next card drawn has an even or odd value. 
@@ -14,7 +14,7 @@ const PROJECTS = [
         image: evenorodd,
         Highlighted: true
     },   {
-        id: 3,
+        id: 2,
         type: 'inSite',
         title: 'Music Master',
         description: `Using the spotify api, searches for an artist's top 10 listened songs and lists
@@ -25,7 +25,7 @@ const PROJECTS = [
         Highlighted: true
     }, 
     {
-        id: 1,
+        id: 3,
         title: 'Pitch Perfect: Accurately Practice',
         description: 'An Android app that helps users develop perfect pitch by allowing them to sing and practice in different modes.',
         link: 'https://github.com/alexlai97/Pitch-Perfectly-Accurately-Practice',
@@ -40,6 +40,15 @@ const PROJECTS = [
         image: mallardLogo,
         Highlighted: false
     },  
+    {
+        id: 5,
+        type: 'inSite',
+        title: 'Jokes',
+        description: `Using a joke api, fetches a bunch of jokes for the user.`,
+        link: '/jokes',
+        image: null,
+        Highlighted: false
+    }
 ];
 
 

@@ -18,9 +18,9 @@ ReactDOM.render(
     <Router history={browser}>
         <Switch>
             <Route exact path='/' render={() => 
-                <Header current="home"><App/><Footer/></Header>}/>
+                <Header current="/"><App/><Footer/></Header>}/>
             <Route path='/jokes' render={() => 
-                <Header current="jokes">
+                <Header current="/jokes">
                     <div className="page" >
                         <div className="page_middle">
                             <h3>Here's a joke!</h3>
@@ -33,7 +33,7 @@ ReactDOM.render(
                     <Footer/>
                 </Header>}/>
             <Route path='/projects' render={() => 
-                <Header current="projects">
+                <Header current="/projects">
                     <div className="page">
                         <div className="page_middle" >
                             <Projects />
@@ -41,7 +41,7 @@ ReactDOM.render(
                     </div>
                 <Footer/></Header>}/>
             <Route path='/music-master' render={() => 
-                <Header current="projects">
+                <Header current="/projects">
                     <div className="page">
                         <div className="page_middle">
                             <MusicMaster />
@@ -49,7 +49,7 @@ ReactDOM.render(
                     </div>
                 <Footer/></Header>}/>
             <Route path='/evens-or-odds' render={() => 
-                <Header current="projects">
+                <Header current="/projects">
                     <div className="page">
                         <div className="page_middle">
                             <EvensOrOdds />
@@ -57,7 +57,7 @@ ReactDOM.render(
                     </div>
             <Footer/></Header>}/>
             <Route path='/league-rank' render={() =>
-            <Header current="league-rank">
+            <Header current="/league-rank">
                 <div className="page">      
                     <div className="page_middle">
                         <League />

@@ -5,14 +5,21 @@ import { Link } from 'react-router-dom';
 const Project = (props) => {
     const { title, image, description, type, link} = props.project;
     var myLinking = null;
+    var projImg = null;
+
     if(type != 'inSite') {
+        if( image != null ) {
+            projImg = <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} />;
+        }
         myLinking = (<a href={link} className="otherlink">
-            <h3><img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px' }} />{title}</h3>
+            <h3>{projImg}{title}</h3>
         </a>)
     } else {
-        
+        if( image != null ) {
+            projImg = <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} />;
+        }
         myLinking = (<Link to={link} className="otherlink"> 
-            <h3> <img src={image} alt='' style={{ height: "10%", width: "10%", margin: '10px'}} />{title}</h3>
+            <h3>{projImg}{title}</h3>
         </Link>)
     }
     var newDescription = <p>{description}</p>;
@@ -54,7 +61,7 @@ const HighlightedProjects = () => {
                                 <Project key={PROJECT.id} project={PROJECT}/>                          
                             );
                         } 
-                        return (<div></div>);
+                        return (null);
                     })
                 }
             </div>

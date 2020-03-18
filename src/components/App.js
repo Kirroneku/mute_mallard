@@ -53,10 +53,6 @@ class App extends Component {
                                     <h5>Previous Work Experience</h5>
                                 </div>
                                 <Jobs />
-                                <div className="ui_section_title">
-                                    <h5>Jokes</h5>
-                                </div>
-                                <Jokes /> 
                             </div>        
                         </div>   
                     </div>

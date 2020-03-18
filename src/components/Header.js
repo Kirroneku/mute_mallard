@@ -6,14 +6,14 @@ import LINKS from '../data/links';
 
 class Header extends Component {
     state = {
-        current: "home",
+        current: "/",
     };
 
     updateCurrent ( curLink ) {
         this.setState({ "current": curLink });
     }
 
-    makeLink (current, curLink, text) {
+    makeLink (curLink, text) {
         return (
             <Link to={curLink} 
             className={this.state.current==curLink? "link": "otherlink"}
@@ -35,7 +35,7 @@ class Header extends Component {
         var linkToHome = (
             <div>
                 <Link to='/'
-                onClick={() => this.updateCurrent(curLink)}> 
+                onClick={() => this.updateCurrent('/')}> 
                     <img src={websiteLogo} id="websiteLogo" />
                 </Link> 
             </div>
@@ -56,9 +56,9 @@ class Header extends Component {
                             <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3>
                             {
                                 LINKS.map(LINK => {
-                                    var curLink = this.makeLink(current, LINK.link, LINK.linkName);
+                                    var curLink = this.makeLink(LINK.link, LINK.linkName);
                                     return(
-                                        <h3 id={LINK.id} style={style}>
+                                        <h3 key={LINK.id} style={style}>
                                             {curLink}
                                         </h3>
                                     )
