@@ -60,49 +60,6 @@ class League extends Component {
             this.setState({inGame: {gameType: -1}})
         }
         
-        
-        // fetch(`${API_URL}/summoner-info?summoner=${this.state.currentSummoner}`)
-        // .then(res => res.json())
-        // .then(json => {
-        //     console.log(json);
-        //     var soloRank = {
-        //         rank: null,
-        //         tier: 'UNRANKED',
-        //         lp: null,
-        //         wr: null
-        //     };
-        //     var flexRank = {
-        //         rank: null,
-        //         tier: 'UNRANKED',
-        //         lp: null,
-        //         wr: null
-        //     };
-
-        //     for (const i in json) {
-        //         switch(json[i].queueType){
-        //             case 'RANKED_SOLO_5x5':
-        //                 soloRank = {
-        //                     tier: json[0].tier, 
-        //                     rank: json[0].rank,
-        //                     lp: json[0].leaguePoints + 'LP'
-        //                 };
-        //                 break;
-        //             case 'RANKED_FLEX_SR':
-        //                 flexRank = {
-        //                     tier: json[1].tier, 
-        //                     rank: json[1].rank,
-        //                     lp: json[1].leaguePoints + 'LP'
-        //                 };
-        //                 break;
-        //             default:
-        //                 console.log("undefined queue type");
-        //         }
-        //     }
-        //     this.setState({soloRank, flexRank});
-        // })
-        // .catch(error => {
-        //     this.setState({inGame: {gameType: -1}})
-        // });
         return ;
     }
 
@@ -130,36 +87,6 @@ class League extends Component {
         } catch (e) {
             console.log(e);
         }
-        
-        // fetch(`${API_URL}/summoner-ingame?summoner=${this.state.currentSummoner}`)
-        // .then(res => res.json())
-        // .then(json => {
-        //     // console.log(json)
-        //     // console.log(json.gameQueueConfigId);
-        //     if(json.status != undefined) {
-        //         return;
-        //     }
-
-        //     for(const i in mode_data) {
-        //         // console.log(mode_data[i].queueId );
-                
-        //         if(mode_data[i].queueId === json.gameQueueConfigId) {
-        //             // console.log("Matched" + json.gameQueueConfigId)
-        //             this.setState({inGame: {
-        //                 gameType: mode_data[i].description,
-        //             }})
-        //             return;
-        //         }
-        //     }
-        // })
-
-
-        // this.setState({inGame: null})
-
-        // console.log(this.state.inGame)
-        
-
-        // setTimeOut(this.getInGame(), 6000);
         return ;
     }
 
