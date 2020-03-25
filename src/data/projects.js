@@ -48,6 +48,15 @@ const PROJECTS = [
         link: '/jokes',
         image: null,
         Highlighted: false
+    },
+    {
+        id: 6,
+        type: 'inSite',
+        title: 'Weather',
+        description: `fetches weather`,
+        link: '/weather-react',
+        image: null,
+        Highlighted: false
     }
 ];
 

@@ -6,6 +6,7 @@ import { Jokes, GetTenJokes } from './components/Joke';
 import Header from './components/Header';
 import MusicMaster from './projects/music_master';
 import EvensOrOdds from './projects/evens-or-odds';
+import Weather from './projects/weather_app'
 import Footer from './components/Footer';
 import { Projects } from './components/Projects';
 import League from './components/League';
@@ -65,6 +66,15 @@ ReactDOM.render(
                 </div>
                 <Footer/></Header>
             } />
+            <Route path='/weather-react' render={() =>
+                <Header current="/projects">
+                    <div className="page">      
+                        <div className="page_middle">
+                            <Weather />
+                        </div>
+                    </div>
+                <Footer/></Header>
+            }/>
         </Switch>
     </Router>,
     document.getElementById('root')
