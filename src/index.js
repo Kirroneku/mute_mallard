@@ -11,6 +11,8 @@ import EvensOrOdds from './projects/evens-or-odds';
 import Weather from './projects/weather_app'
 import { Projects } from './components/Projects';
 import League from './components/League';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // Utility, wrapper + css
 import Wrapper from './components/Wrapper';
@@ -22,7 +24,7 @@ ReactDOM.render(
     <Router history={browser}>
         <Switch>
             <Route exact path='/' render={() => 
-                <Wrapper highlight="/"><App/></Wrapper>}/>
+                <Header><App/><Footer/></Header>}/>
             <Route path='/jokes' render={() => 
                 <Wrapper highlight='/projects'>
                     <h3>Here's a joke!</h3>

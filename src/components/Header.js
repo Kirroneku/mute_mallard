@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import websiteLogo from '../assets/websiteLogo.png';
+import websiteLogo from '../assets/websiteLogo.jpg';
 import Socials from './Social';
 import LINKS from '../data/links';
 

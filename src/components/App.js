@@ -29,7 +29,6 @@ class App extends Component {
     render() {            
         return (
             <div className="block">
-                <SpawnDucks />
                 <div className="page">
                     <div className="ui_middle" >
                         <div className="ui_middlepad"  > 
@@ -39,10 +38,11 @@ class App extends Component {
                                 </div>
                                 <img src={profile} alt='profile' className="profile"/>
                                 <h3> 
-                                    Jialin Shan 
+                                    Jay-lynn (Jialin) Shan 
                                 </h3>
                                 <a href="mailto:j6shan@gmail.com">j6shan@gmail.com</a>
-                                <p>I am a software engineer that is motivated to learn new things all the time! </p>
+                                <p>I am a software developer that is motivated to learn new things all the time! </p>
+                                <p>I also draw as a hobby! twitter - <a href="https://twitter.com/mute_mallart">@mute_mallart</a></p>
                             </div>
                             <div className="ui_section">
                                 <div className="ui_section_title">

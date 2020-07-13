@@ -1,7 +1,7 @@
 import evenorodd from '../assets/eoLogo.png';
 import music_master from '../assets/mmLogo.png';
 import ppap from '../assets/ppap.png';
-import mallardLogo from '../assets/websiteLogo.png';
+import mallardLogo from '../assets/websiteLogo.jpg';
 
 const PROJECTS = [
     {
@@ -53,7 +53,7 @@ const PROJECTS = [
         id: 6,
         type: 'inSite',
         title: 'Weather',
-        description: `fetches weather`,
+        description: `fetches weather, need to be https://mutemallard.ca`,
         link: '/weather-react',
         image: null,
         Highlighted: false
