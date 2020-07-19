@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import {HighlightedProjects} from './Projects';
 import Jobs from './Jobs';
 import profile from '../assets/profile.jpg'
-import Title from './title';
-import { Jokes } from './Joke';
-import SpawnDucks from './SpawnDucks'
+// import Title from './title';
+// import { Jokes } from './Joke';
 
 class App extends Component {
     state = {

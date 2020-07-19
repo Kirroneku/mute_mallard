@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import websiteLogo from '../assets/websiteLogo.jpg';
 import Socials from './Social';
+import { Burger, Menu } from './HamburgerMenu';
 import LINKS from '../data/links';
 
 class Header extends Component {
     state = {
         current: "/",
+        open: false,
+        setOpen: false
     };
 
     updateCurrent ( curLink ) {
@@ -21,6 +24,10 @@ class Header extends Component {
                 {text}
             </Link>
         )
+    }
+
+    setOpen () {
+        this.setState({open: !this.state.open})
     }
 
     render() {
@@ -43,17 +50,22 @@ class Header extends Component {
 
         const socialStyle = {
             "float": "right",
-            "marginTop": "-1.8em",
+            "marginTop": "-2.5em",
             // "marginRight": "min(200px, 10%)"
         }
-
+      
         return (     
 
             <div>
                 <div className="header">
                     <div className="titleWrapper">
                         <div className="titleMenu">
+                            
                             <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3>
+
+                            <Burger open={this.state.open} setOpen={() => this.setOpen()} />
+                            <Menu open={this.state.open} setOpen={() => this.setOpen()} />
+
                             {
                                 LINKS.map(LINK => {
                                     var curLink = this.makeLink(LINK.link, LINK.linkName);
