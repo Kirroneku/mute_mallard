@@ -2,35 +2,33 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import websiteLogo from '../assets/websiteLogo.jpg';
 import Socials from './Social';
-import LINKS from '../data/links';
+import { Burger, Menu } from './HamburgerMenu';
+
+function inputClick (e) {
+    let menuWidth = parseInt(window.getComputedStyle(document.getElementById("ham")).width);
+
+    if( this.state.open && e.clientX > menuWidth ) {
+        this.setState({"open": false})
+    }
+}
 
 class Header extends Component {
     state = {
-        current: "/",
+        open: false,
+        setOpen: false
     };
 
     updateCurrent ( curLink ) {
         this.setState({ "current": curLink });
     }
 
-    makeLink (curLink, text) {
-        return (
-            <Link to={curLink} 
-            className={this.state.current==curLink? "link": "otherlink"}
-            onClick={() => this.updateCurrent(curLink)}>
-                {text}
-            </Link>
-        )
+    setOpen () {
+        this.setState({ "open" : !this.state.open})
+        console.log("statechange!", this.state.open)
     }
 
     render() {
         let { current } = this.props;
-        const style = {
-            display: 'inline-block',
-            // color: 'black',
-            margin: 10,
-            marginBottom: 0,
-        }
 
         var linkToHome = (
             <div>
@@ -43,32 +41,30 @@ class Header extends Component {
 
         const socialStyle = {
             "float": "right",
-            "marginTop": "-1.8em",
+            "marginTop": "0.5em",
             // "marginRight": "min(200px, 10%)"
         }
+      
+        document.onclick = inputClick.bind(this);
 
         return (     
 
             <div>
-                <div className="header">
+                <div className="header" style={{height: "3em", letterSpacing:"0.1em"}}>
                     <div className="titleWrapper">
                         <div className="titleMenu">
-                            <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3>
-                            {
-                                LINKS.map(LINK => {
-                                    var curLink = this.makeLink(LINK.link, LINK.linkName);
-                                    return(
-                                        <h3 key={LINK.id} style={style}>
-                                            {curLink}
-                                        </h3>
-                                    )
-                                })
-                            }
+                            {/* <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3> */}
+
+                            <Burger open={this.state.open} setOpen={() => this.setOpen()} />
+                            <Menu open={this.state.open} setOpen={() => this.setOpen()} />
+
                         </div>
                         <div style={socialStyle}>
                             <Socials />
                         </div>
                     </div>
+                    <h2 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.3em"}}>Jaylynn (Jialin) Shan</h2>
+
                 </div>
                 {this.props.children}  
             </div> 
