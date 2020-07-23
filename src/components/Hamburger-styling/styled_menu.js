@@ -13,22 +13,20 @@ padding: 2rem;
 position: absolute;
 top: 0;
 left: 0;
-transition: transform 0.5s ease-in-out;
+transition: transform 0.3s ease-in-out;
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     width: 100%;
   }
 
 a {
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 2rem 0;
   font-weight: bold;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.4rem;
   color: #0D0C1D;
-  text-decoration: none;
-  transition: color 0.3s linear;
-
+  transition: color 0.1s linear;
+  margin: 10;
   @media (max-width: 576px) {
     font-size: 1.5rem;
     text-align: center;

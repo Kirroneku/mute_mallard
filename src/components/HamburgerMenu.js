@@ -6,20 +6,20 @@ import LINKS from '../data/links';
 
 function makeLink (curLink, text) {
   return (
+    <div>
       <Link to={curLink} >
-
           {text}
       </Link>
+    </div>
+
   )
 }
 // className={this.state.current==curLink? "link": "otherlink"}
 // onClick={() => this.updateCurrent(curLink)}>
 const Menu = ({ open }) => {
   const style = {
-    display: 'inline-block',
-    // color: 'black',
-    margin: 10,
     marginBottom: 0,
+    padding: 0
 }
 
   return (
@@ -40,7 +40,7 @@ const Menu = ({ open }) => {
 
 const Burger = ({ open, setOpen }) => {
     return (
-      <StyledBurger id="hamToggle" open={open} onClick={() => setOpen(!open)}>
+      <StyledBurger  open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />
