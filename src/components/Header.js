@@ -50,7 +50,7 @@ class Header extends Component {
         return (     
 
             <div>
-                <div className="header" style={{height: "3em"}}>
+                <div className="header" style={{height: "3em", letterSpacing:"0.1em"}}>
                     <div className="titleWrapper">
                         <div className="titleMenu">
                             {/* <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3> */}
@@ -63,7 +63,7 @@ class Header extends Component {
                             <Socials />
                         </div>
                     </div>
-                    <h3 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.4em"}}>Jaylynn (Jialin) Shan</h3>
+                    <h2 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.3em"}}>Jaylynn (Jialin) Shan</h2>
 
                 </div>
                 {this.props.children}  

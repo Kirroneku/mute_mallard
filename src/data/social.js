@@ -9,11 +9,11 @@ const SOCIAL_PROFILES = [
         link: 'mailto:j6shan@gmail.com',
         image: emailIcon,
     },
-    // {
-    //     id: 2,
-    //     link: 'kirroneku',
-    //     image: twitterIcon,
-    // },
+    {
+        id: 2,
+        link: 'https://twitter.com/mute_mallart',
+        image: twitterIcon,
+    },
     {
         id: 3,
         link: 'https://www.linkedin.com/in/jialin-shan-56247574/',

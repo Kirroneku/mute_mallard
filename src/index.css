@@ -79,7 +79,7 @@ body{
 .ui_section {
     position: relative;
     background-color: white;
-    border: 0.5px lightgray solid;
+    border: 0.5px #d3d3d3 solid;
     border-radius: 5px;
     margin-top: 15px;
     padding: 5px;
@@ -165,9 +165,10 @@ body{
 }
 
 .profile {
-    width: 130px;
-    width: 130px;
-    border-radius: 100px;
+    width: 140px;
+    height: 130px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .title-fade-out{

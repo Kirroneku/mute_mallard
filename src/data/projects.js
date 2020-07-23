@@ -11,7 +11,7 @@ const PROJECTS = [
         description:    `A guessing game to guess if the next card drawn has an even or odd value. 
                         Keeps track of scores and has a constant record. Made using react-redux `,
         link: '/evens-or-odds',
-        image: evenorodd,
+        // image: evenorodd,
         Highlighted: true
     },   {
         id: 2,
@@ -21,7 +21,7 @@ const PROJECTS = [
         them to allow the user to listen to a 30 second preview.
         `,
         link: '/music-master',
-        image: music_master,
+        // image: music_master,
         Highlighted: true
     }, 
     {
@@ -35,7 +35,7 @@ const PROJECTS = [
     {
         id: 4,
         title: 'Mute Mallard',
-        description: 'The website you are currently on! Made with react native.',
+        description: 'The website you are currently on! Made with react.',
         link: 'https://mutemallard.ca',
         image: mallardLogo,
         Highlighted: false

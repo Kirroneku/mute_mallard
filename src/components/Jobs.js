@@ -6,10 +6,10 @@ const Job = (props) => {
     const myId =  id + "job";
     const curId = '#' + id + "job";
     return(
-        <div style={{ display: 'inline-block', width: "80%", margin: 10}}>
-            <h4>{title}</h4>
-            <h4>{time}</h4>
-            <div id={id}>
+        <div style={{ display: 'inline-block', width: "95%", margin: 10}}>
+            <h5>{title}</h5>
+            <h6>{time}</h6>
+            <div id={id} style={{textAlign:'left'}}>
                 <p style={{"whiteSpace": "pre-line", "textAlign":"left"}}>{description}</p>
             </div>
             <hr></hr>
