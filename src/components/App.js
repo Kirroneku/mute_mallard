@@ -15,8 +15,6 @@ class App extends Component {
 
     render() {            
         return (
-            <div className="block">
-                <div className="page">
                     <div className="ui_middle" >
                         <div className="ui_middlepad"  > 
                             <div className="ui_section">
@@ -74,8 +72,6 @@ class App extends Component {
                             </div>        
                         </div>   
                     </div>
-                </div>
-            </div>
         )
     }
 }

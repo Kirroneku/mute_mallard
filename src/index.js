@@ -15,7 +15,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // Utility, wrapper + css
-import Wrapper from './components/Wrapper';
+import {Wrapper, PageWrap} from './components/Wrapper';
 import './index.css';
 
 const browser = require("history").createBrowserHistory();
@@ -24,7 +24,7 @@ ReactDOM.render(
     <Router history={browser}>
         <Switch>
             <Route exact path='/' render={() => 
-                <Header><App/><Footer/></Header>}/>
+                <Wrapper><App/></Wrapper>}/>
             <Route path='/jokes' render={() => 
                 <Wrapper highlight='/projects'>
                     <h3>Here's a joke!</h3>
@@ -35,27 +35,37 @@ ReactDOM.render(
                 </Wrapper>}/>
             <Route path='/projects' render={() => 
                 <Wrapper highlight='/projects'>
-                    <Projects />
+                    <PageWrap>
+                        <Projects />
+                    </PageWrap>
                 </Wrapper>
             }/>
             <Route path='/music-master' render={() => 
                 <Wrapper highlight='/projects'>
-                    <MusicMaster />
+                    <PageWrap>
+                        <MusicMaster />
+                    </PageWrap>
                 </Wrapper>
             }/>
             <Route path='/evens-or-odds' render={() => 
                 <Wrapper highlight='/projects'>
-                    <EvensOrOdds />
+                    <PageWrap>
+                        <EvensOrOdds />
+                    </PageWrap>
                 </Wrapper>
             }/>
             <Route path='/league-rank' render={() => 
                 <Wrapper highlight='/league-rank'>
-                    <League />
+                    <PageWrap>
+                        <League />
+                    </PageWrap>
                 </Wrapper>
             }/>
             <Route path='/weather-react' render={() => 
                 <Wrapper highlight='/projects'>
-                    <Weather />
+                    <PageWrap>
+                        <Weather />
+                    </PageWrap>
                 </Wrapper>
             }/>
         </Switch>
