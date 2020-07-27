@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {HighlightedProjects} from './Projects';
+import '../css/loading-spinner.css';
+
 import Jobs from './Jobs';
 import profile from '../assets/profile.jpg'
 // import Title from './title';

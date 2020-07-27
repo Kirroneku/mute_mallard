@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LEAGUE_RANKS from '../data/leagueRank';
-
 const mode_data = require('../data/queues.json');
 const API_URL = "https://us-central1-pivotal-surfer-261220.cloudfunctions.net/riot-wrapper";
 
@@ -9,7 +8,8 @@ class League extends Component {
         soloRank: null,
         flexRank: null,
         inGame: null,
-        currentSummoner: "Import"
+        currentSummoner: "Import",
+        loading: true
     }
 
     componentDidMount() {
@@ -20,6 +20,7 @@ class League extends Component {
     getLeagueRank = async () => {
         // console.log("finding league")
         try {
+            this.setState({"loading": true});
             let res = await fetch(`${API_URL}/summoner-info?summoner=${this.state.currentSummoner}`);
             let json = await res.json();
             var soloRank = {
@@ -55,7 +56,7 @@ class League extends Component {
                         console.log("undefined queue type");
                 }
             }
-            this.setState({soloRank, flexRank});
+            this.setState({loading: false,soloRank, flexRank});
         } catch (e) {
             this.setState({inGame: {gameType: -1}})
         }
@@ -112,6 +113,8 @@ class League extends Component {
 
         var flexRank = null;
         var flexRankImg = null
+
+        var info = null;
 
         var inGame = 
             (<div style={{textAlign: 'center'}}>
@@ -177,6 +180,19 @@ class League extends Component {
                 </div>);
         }
         
+        if( this.state.loading ){
+            info =  <center><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></center>
+      
+        } else {
+            info = <div>
+                <h3>Summoner: {this.state.currentSummoner}</h3>
+                {soloRank}
+                {flexRank}
+                <hr />
+                {inGame} 
+            </div>
+
+        }
 
         return (
             <div>
@@ -191,11 +207,7 @@ class League extends Component {
                     style={{"width":"170px", "marginBottom": "10px"}}
                 />
                 <button onClick={() => this.findSummoner()}>Check</button>
-                <h3>Summoner: {this.state.currentSummoner}</h3>
-                {soloRank}
-                {flexRank}
-                <hr />
-                {inGame} 
+                {info}
 
             </div>
         )
