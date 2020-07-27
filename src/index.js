@@ -27,11 +27,13 @@ ReactDOM.render(
                 <Wrapper><App/></Wrapper>}/>
             <Route path='/jokes' render={() => 
                 <Wrapper highlight='/projects'>
-                    <h3>Here's a joke!</h3>
-                    <Jokes/>
-                    <hr/>
-                    <h3>Ten more jokes!</h3>
-                    <GetTenJokes />
+                    <PageWrap>
+                        <h3>Here's a joke!</h3>
+                        <Jokes/>
+                        <hr/>
+                        <h3>Ten more jokes!</h3>
+                        <GetTenJokes />
+                    </PageWrap>
                 </Wrapper>}/>
             <Route path='/projects' render={() => 
                 <Wrapper highlight='/projects'>
