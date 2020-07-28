@@ -30,15 +30,6 @@ class Header extends Component {
     render() {
         let { current } = this.props;
 
-        var linkToHome = (
-            <div>
-                <Link to='/'
-                onClick={() => this.updateCurrent('/')}> 
-                    <img src={websiteLogo} id="websiteLogo" />
-                </Link> 
-            </div>
-        );
-
         const socialStyle = {
             "float": "right",
             "marginTop": "0.5em",
@@ -63,7 +54,10 @@ class Header extends Component {
                             <Socials />
                         </div>
                     </div>
-                    <h2 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.3em"}}>Jaylynn (Jialin) Shan</h2>
+                    <h2 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.3em"}}><Link to='/'
+                        onClick={() => this.updateCurrent('/')} className="mainLink"> 
+                            Jaylynn (Jialin) Shan
+                        </Link> </h2>
 
                 </div>
                 {this.props.children}  

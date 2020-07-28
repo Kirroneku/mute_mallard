@@ -128,6 +128,14 @@ body{
     padding-top: 80px;
 }
 
+.mainLink {
+    color: black
+}
+
+.mainLink:hover{
+    color: gray;
+}
+
 .link {
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
