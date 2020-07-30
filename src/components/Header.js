@@ -4,6 +4,8 @@ import websiteLogo from '../assets/websiteLogo.jpg';
 import Socials from './Social';
 import { Burger, Menu } from './HamburgerMenu';
 
+const isMobile = document.body.clientWidth < 500? true: false;
+
 function inputClick (e) {
     let menuWidth = parseInt(window.getComputedStyle(document.getElementById("ham")).width);
 
@@ -37,18 +39,21 @@ class Header extends Component {
         }
       
         document.onclick = inputClick.bind(this);
+        let nameText = "Jaylynn (Jialin) Shan";
+
+        if( isMobile ) {
+            nameText = "";
+        }
 
         return (     
 
             <div>
                 <div className="header" style={{height: "3em", letterSpacing:"0.1em"}}>
+                    <Burger open={this.state.open} setOpen={() => this.setOpen()} />
+                    <Menu open={this.state.open} setOpen={() => this.setOpen()} />
                     <div className="titleWrapper">
                         <div className="titleMenu">
                             {/* <h3 style={{margin: "10 0 0 0", display: 'inline-block'}}>{linkToHome}</h3> */}
-
-                            <Burger open={this.state.open} setOpen={() => this.setOpen()} />
-                            <Menu open={this.state.open} setOpen={() => this.setOpen()} />
-
                         </div>
                         <div style={socialStyle}>
                             <Socials />
@@ -56,7 +61,7 @@ class Header extends Component {
                     </div>
                     <h2 style={{textAlign:"center", position:"absolute", margin:"auto", left:"30%", right: "30%", top:"0.3em"}}><Link to='/'
                         onClick={() => this.updateCurrent('/')} className="mainLink"> 
-                            Jaylynn (Jialin) Shan
+                            {nameText}
                         </Link> </h2>
 
                 </div>

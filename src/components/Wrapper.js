@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
+const isMobile = window.innerWidth <= 500;
+
 const Wrapper = (props) => 
         <Header current={props.highlight}>
             <div className="page">

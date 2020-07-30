@@ -18,10 +18,10 @@ h1, h2, h3, h4, h5{
 body{
     text-align: center;
     word-wrap: break-word;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #e4e7ee;
     /* padding: 2.5%; */
-    font-family: 'RobotoCondensed';
+    font-family: 'Roboto';
     z-index: -999;
     /* background-image: url('assets/background.jpg');
     background-size: ; */
@@ -34,16 +34,17 @@ body{
     width: 100%;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
-    position: fixed;
+    /* position: fixed; */
     z-index: 99;
 }
 
 .footer {
-    width: 980px;
+    width: 100%;
     margin: 40px auto 0px;
     border: solid 1px rgb(184, 193, 207);
     border-radius: 10px 10px 0 0;
     padding: 2rem 2rem;
+    max-width: 980px;
     clear:both;
 }
 
@@ -70,7 +71,7 @@ body{
 }
 
 .ui_section_title h5 {
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
     padding: 1px 3px;
     font-weight: bold;
@@ -93,7 +94,8 @@ body{
     border-radius: 5px;
     padding: 5px;
     padding-top: 10px;
-    width: 980px;
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto;
 }
 
@@ -105,13 +107,16 @@ body{
 
 .ui_middle {
     float: left;
-    width: 980px;
+    width: 100%;
+    max-width: 980px;
 }
 
 .ui_middlepad{
     float: left;
-    margin: 10px;
-    width: 980px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .ui_right {
@@ -123,9 +128,10 @@ body{
 
 .page {
     word-wrap: break-word;
-    width: 1000px;
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto;
-    padding-top: 80px;
+    /* padding-top: 80px; */
 }
 
 .mainLink {
@@ -177,6 +183,7 @@ body{
     height: 130px;
     border-radius: 10px;
     margin: 10px;
+    float: right;
 }
 
 .title-fade-out{

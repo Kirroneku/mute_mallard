@@ -204,7 +204,7 @@ class League extends Component {
                     onKeyPress={this.handleKeyPress}
                     onChange={this.updateSummoner}
                     placeholder="Import (My Account)"
-                    style={{"width":"170px", "marginBottom": "10px"}}
+                    style={{"width":"200px", "marginBottom": "10px"}}
                 />
                 <button onClick={() => this.findSummoner()}>Check</button>
                 {info}

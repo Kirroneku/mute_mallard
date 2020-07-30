@@ -4,6 +4,7 @@ import StyledMenu from './Hamburger-styling/styled_menu';
 import { Link } from 'react-router-dom';
 import LINKS from '../data/links';
 
+
 function makeLink (curLink, text) {
   return (
     <div>
@@ -16,11 +17,11 @@ function makeLink (curLink, text) {
 }
 // className={this.state.current==curLink? "link": "otherlink"}
 // onClick={() => this.updateCurrent(curLink)}>
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen }) => {
   const style = {
     marginBottom: 0,
     padding: 0
-}
+  }
 
   return (
     <StyledMenu id="ham" open={open}>
@@ -28,7 +29,7 @@ const Menu = ({ open }) => {
       LINKS.map(LINK => {
           var curLink = makeLink(LINK.link, LINK.linkName);
           return(
-              <h3 key={LINK.id} style={style}>
+              <h3 key={LINK.id} onClick={() => setOpen()} style={style}>
                   {curLink}
               </h3>
           )

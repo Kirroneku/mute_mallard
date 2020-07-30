@@ -14,10 +14,9 @@ position: absolute;
 top: 0;
 left: 0;
 transition: transform 0.3s ease-in-out;
-
-@media (max-width: 600px) {
-    width: 100%;
-  }
+z-index: 1;
+width: 100%;
+max-width: 600px;
 
 a {
   font-size: 2rem;

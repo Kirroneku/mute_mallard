@@ -12,6 +12,7 @@ class App extends Component {
         displayBio: false,
     };
     
+    
 
     render() {            
         return (
@@ -23,9 +24,9 @@ class App extends Component {
                                 </div>
                                 <div style = {{ textAlign:"left", margin:'10px'}}>
                                     <div style={{display:'inline-flex'}}> 
-                                        <img src={profile} alt='profile' className="profile" />
                                         <div>
-                                            
+                                        <img src={profile} alt='profile' className="profile" />
+
                                             {/* <a href="mailto:j6shan@gmail.com">j6shan@gmail.com</a> */}
                                             <p>My name is Jialin (Pronouced Jay-lynn) and I graduated with a Bachelor of Computer Science Co-op from the University of Waterloo. 
                                                 I am a software developer that is motivated to learn new things all the time! This website is mostly a pet project for myself in order to
@@ -43,7 +44,7 @@ class App extends Component {
                                                 like to play videogames, such as league of legends - speaking of which I have a section of my website dedicated to fetching league of legends information! </p>
                                     </div>
                                     <div> 
-                                        <p>
+
                                             Some of the technologies and tools I typically work with include:
                                             <ul>
                                                 <li>Javascript</li>
@@ -56,7 +57,7 @@ class App extends Component {
                                                 <li>Java</li>
                                                 <li>C++</li>
                                             </ul>
-                                        </p>
+           
                                     </div>
                                 </div>
                             </div>
