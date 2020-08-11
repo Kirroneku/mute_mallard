@@ -34,12 +34,20 @@ const PROJECTS = [
     },  
     {
         id: 4,
+        type: 'inSite',
         title: 'Mute Mallard',
         description: 'The website you are currently on! Made with react.',
-        link: 'https://mutemallard.ca',
+        link: '/',
         image: mallardLogo,
         Highlighted: false
-    },  
+    },      
+    {
+        id: 10,
+        title: 'Travel Buddy',
+        description: '(Work in Progress!) A website built to help people record and share their travel adventures around the world.',
+        link: 'https://kirroneku.github.io/travelbuddy/',
+        Highlighted: true
+    },
     {
         id: 5,
         type: 'inSite',
