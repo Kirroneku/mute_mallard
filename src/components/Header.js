@@ -34,7 +34,7 @@ class Header extends Component {
 
         const socialStyle = {
             "float": "right",
-            "marginTop": "0.5em",
+            "marginTop": "1em",
             // "marginRight": "min(200px, 10%)"
         }
       
@@ -48,7 +48,7 @@ class Header extends Component {
         return (     
 
             <div>
-                <div className="header" style={{height: "3em", letterSpacing:"0.1em"}}>
+                <div className="header" style={{height: "3.5em", letterSpacing:"0.1em"}}>
                     <Burger open={this.state.open} setOpen={() => this.setOpen()} />
                     <Menu open={this.state.open} setOpen={() => this.setOpen()} />
                     <div className="titleWrapper">
