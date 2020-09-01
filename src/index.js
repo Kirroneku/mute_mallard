@@ -11,8 +11,7 @@ import EvensOrOdds from './projects/evens-or-odds';
 import Weather from './projects/weather_app'
 import { Projects } from './components/Projects';
 import League from './components/League';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Resume from './components/Resume';
 
 // Utility, wrapper + css
 import {Wrapper, PageWrap} from './components/Wrapper';
@@ -39,6 +38,13 @@ ReactDOM.render(
                 <Wrapper highlight='/projects'>
                     <PageWrap>
                         <Projects />
+                    </PageWrap>
+                </Wrapper>
+            }/>
+            <Route path="/resume" render={() =>
+                <Wrapper highlight='/resume'>
+                    <PageWrap>
+                        <Resume />
                     </PageWrap>
                 </Wrapper>
             }/>

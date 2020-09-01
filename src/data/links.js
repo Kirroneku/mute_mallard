@@ -2,7 +2,7 @@ const LINKS = [
     {
         id: 0,
         link: '/',
-        linkName: 'Portfolio'
+        linkName: 'Home'
     },
     {
         id: 2,
@@ -11,6 +11,11 @@ const LINKS = [
     },
     {
         id: 3,
+        link: '/resume',
+        linkName: 'Resume'
+    },
+    {
+        id: 4,
         link: '/league-rank',
         linkName: 'Riot Games Stats'
     }

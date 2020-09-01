@@ -197,7 +197,20 @@ body{
     animation-name: fade-in;
     animation-duration: 1s;
 }
-
+/* Style buttons */
+.btn {
+    background-color: skyblue;
+    border: none;
+    color: black;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+/* Darker background on mouse-over */
+.btn:hover {
+background-color: lightblue;
+}
 @keyframes fade-out {
     from { opacity: 100 }
     to { opacity: 0 }
